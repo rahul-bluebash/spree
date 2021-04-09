@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-class DummyController < Spree::Api::V2::Platform::ResourceController
+class PlatformApiDummyController < Spree::Api::V2::Platform::ResourceController
   private
 
   def model_class
@@ -13,7 +13,7 @@ class DummyController < Spree::Api::V2::Platform::ResourceController
 end
 
 describe Spree::Api::V2::Platform::ResourceController, type: :controller do
-  let(:dummy_controller) { DummyController.new }
+  let(:dummy_controller) { PlatformApiDummyController.new }
 
   describe '#resource_serializer' do
     it { expect(dummy_controller.send(:resource_serializer)).to be Spree::Api::V2::Platform::AddressSerializer }
